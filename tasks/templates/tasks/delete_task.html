@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html>
+<body>
+    <h1>Görevi Sil</h1>
+    <p>{{ task.title }} görevini silmek istediğinizden emin misiniz?</p>
+    <form method="post">
+        {% csrf_token %}
+        <button type="submit">Evet</button>
+        <a href="{% url 'task_list' %}">Hayır</a>
+    </form>
+</body>
+</html>

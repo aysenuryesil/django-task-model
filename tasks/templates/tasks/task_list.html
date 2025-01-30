@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<body>
+    <h1>Görev Listesi</h1>
+    <ul>
+        {% for task in tasks %}
+        <li>
+            {{ task.title }} - {{ task.description }}
+            <a href="{% url 'update_task' task.id %}">Düzenle</a>
+            <a href="{% url 'delete_task' task.id %}">Sil</a>
+        </li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'create_task' %}">Yeni Görev Ekle</a>
+</body>
+</html>
+
